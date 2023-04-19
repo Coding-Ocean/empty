@@ -7,8 +7,18 @@ extern int ClientHeight;
 extern unsigned ActiveWindow;
 extern int MouseDelta;
 extern bool Windowed;
-unsigned getTime();
+extern float DeltaTime;
+
 //clientWidthとclientHeightを省略するとフルスクリーンモードになる
-void initWindow(LPCTSTR caption, int clientWidth = 0, int clientHeight = 0);
+void initWindow(const char* caption, int clientWidth = 0, int clientHeight = 0);
 
+void closeWindow();
 
+#define delta DeltaTime
+void initDeltaTime();
+void setDeltaTime();
+unsigned getTime();
+
+bool isMainThread();
+void hideCursor();
+void showCursor();
